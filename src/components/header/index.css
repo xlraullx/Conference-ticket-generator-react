@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    height: 5vh;
+    padding-top: 1.5%;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    color: var(--header-letter-color);
+}
+
+.header h2 {
+    margin-left: 20px;
+}

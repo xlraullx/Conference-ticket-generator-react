@@ -1,0 +1,179 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 460px;
+    width: 100%;
+    height: 100%;
+}
+
+.form input {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.6rem;
+    color: var(--inputs-text-color);
+    background-color: var(--inputs-background-color);
+    width: inherit;
+    height: 52px;
+    backdrop-filter: blur(2px);
+    border: 1px solid var(--inputs-border-color);
+    border-radius: 10px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form input:focus-visible {
+    outline: 2px solid var(--inputs-focus-color);
+    outline-offset: 3px;
+}
+
+.form label:not([for="avatar"]) {
+    width: fit-content;
+    font-size: 1.8rem;
+    color: var(--inputs-label-color);
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.form input::placeholder {
+    color: var(--inputs-placeholder-color);
+}
+
+.form .upload-avatar {
+    color: var(--upload-avatar-text-color);
+    font-size: 2rem;
+}
+
+.form .upload-area {
+    margin-top: 10px;
+    position: relative;
+    width: inherit;
+    height: 130px;
+    background: var(--inputs-background-color);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    font-family: 'Inconsolata', monospace;
+    color: var(--inputs-text-color);
+    background-color: var(--inputs-background-color) ;
+    -webkit-box-shadow: 0 0 0 1000px var(--inputs-background-color) inset;
+    -webkit-text-fill-color: var(--inputs-text-color);
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.form .upload-area input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.form .upload-area label,
+.form .upload-info {
+    color: var(--upload-p-and-lable-color);
+}
+
+.form .upload-area label {
+    border: 10px solid #0000;
+    border-image: url(../../assets/images/border-upload-image.svg) 50 stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-image-width: 50px;
+    font-size: 1.8rem;
+    border-radius: inherit;
+    cursor: pointer;
+}
+
+.form .upload-area:has(input:focus-visible) {
+    outline: 2px solid var(--inputs-focus-color);
+    outline-offset: 3px;
+}
+
+.form .upload-area label::before {
+    content: '';
+    margin-bottom: 16px;
+    background-image: url(../../assets/images/icon-upload.svg);
+    background-size: 30px;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    border-radius: inherit;
+    border: 1px solid var(--inputs-background-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+}
+
+.form .upload-info {
+    display: flex;
+    font-size: 1.4rem;
+    margin: 12px 0 20px 0;
+}
+
+.form .upload-info p{
+    padding-left: 24px;
+    position: relative;
+}
+
+.form .upload-info p::before {
+    content: '';
+    display: flex;
+    position: absolute;
+    background-image: url(../../assets/images/icon-info.svg);
+    background-size: 16px;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.form .bnt {
+    font-family: 'Inconsolata', monospace;
+    font-size: 2.2rem;
+    font-weight: 800;
+    border: none;
+    border-radius: 16px;
+    color: var(--bnt-text-color);
+    background-color: var(--bnt-submit-bkg-color);
+    height: 56px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.form .upload-info.error img{
+    filter: invert(13%) sepia(77%) saturate(5719%) hue-rotate(342deg) brightness(106%) contrast(104%);
+}
+
+.form .upload-info.error{
+    color: var(--strong-orange);
+}
+
+.form .error-text {
+    display: flex;
+    font-size: 1.4rem;
+    color: var(--strong-orange);
+    margin-bottom: 4px;
+    width: max-content;
+}
+
+.form .error-text::before {
+    content: url(../../assets/images/icon-info.svg);
+    margin-right: 8px;
+    filter: invert(13%) sepia(77%) saturate(5719%) hue-rotate(342deg) brightness(106%) contrast(104%);
+}
+
+
+
+.form .error-text ~ .bnt{
+    margin-top: 0;
+}

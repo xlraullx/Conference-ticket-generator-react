@@ -1,0 +1,60 @@
+body {
+    font-family: 'Inconsolata', monospace;
+    background-image:
+        url(./assets/images/pattern-squiggly-line-bottom-desktop.svg),
+        url(./assets/images/pattern-squiggly-line-top.svg),
+        url(./assets/images/pattern-circle.svg),
+        url(./assets/images/pattern-circle.svg),
+        url(./assets/images/pattern-lines.svg),
+        url(./assets/images/background-desktop.png);
+    background-size: auto, auto, auto, auto, cover, cover;
+    background-repeat: no-repeat;
+    background-position: bottom left, top 10% right, top -13% left 5%, right 30% bottom 40%, center, center;
+}
+
+/* Global Styles */
+
+:root{
+            /* Colors */
+
+    --white: hsl(0, 0%, 100%);
+    --gray: hsl(252, 6%, 83%);
+    --pale-violet: hsl(245, 15%, 58%);
+    --light-violet: hsl(245, 19.10%, 34.90%);
+    --light--transparent-violet: hsl(245, 19.10%, 34.90%, 0.3);
+    --dark-violet: hsl(248, 70%, 10%);
+    --orange: hsl(7, 88%, 67%);
+    --strong-orange: hsl(7, 71%, 60%);
+
+
+        /* Project color definitions */
+
+    --header-letter-color: var(--white);
+    --presentation-h1-color: var(--white);
+    --presentation-p-color: var(--gray);
+    --inputs-background-color: var(--light--transparent-violet);
+    --inputs-focus-color: var(--pale-violet);
+    --inputs-border-color: var(--pale-violet);
+    --inputs-label-color: var(--white);
+    --inputs-placeholder-color: var(--gray);
+    --inputs-text-color: var(--white);
+    --upload-avatar-text-color: var(--white);
+    --upload-p-and-lable-color: var(--gray);
+    --bnt-submit-bkg-color: var(--orange);
+    --bnt-text-color: var(--dark-violet);
+
+    --error-text-color: var(--strong-orange);
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url(./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf) format('truetype'),
+    url(./assets/fonts/static/Inconsolata-Regular.ttf) format('truetype'),
+    url(./assets/fonts/static/Inconsolata-Medium.ttf) format('truetype'),
+    url(./assets/fonts/static/Inconsolata-Bold.ttf) format('truetype'),
+    url(./assets/fonts/static/Inconsolata-ExtraBold.ttf) format('truetype');
+}
+
+html{
+    font-size: 62.5%; /* 1rem = 10px */
+}
