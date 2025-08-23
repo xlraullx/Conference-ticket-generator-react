@@ -98,6 +98,80 @@ input:-webkit-autofill:active {
     outline-offset: 3px;
 }
 
+.form .upload-area .avatar-image {
+    display: block;
+    width: 51px;
+    height: 51px;
+    margin-bottom: 16px;
+    border-radius: inherit;
+    object-fit: cover;
+    border: solid 1px var(--inputs-focus-color);
+}
+
+.form .upload-area:has(.avatar-image) label::before {
+    display: none;
+}
+
+.form .upload-area div{
+    display: none;
+    gap: 8px;
+    position: absolute;
+    bottom: 16%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.form .upload-area .avatar-buttons button {
+    font-family: 'Inconsolata', monospace;
+    color: var(--inputs-text-color);
+    font-size: 1.2rem;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--inputs-border-color) opaccity();
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.form .upload-area .avatar-buttons button span{
+    position: relative;
+}
+
+.form .upload-area .avatar-buttons button span::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--white);
+    height: 1px;
+    width: 0;
+    transition:  0.2s ease-in-out;
+}
+
+.form .upload-area .avatar-buttons button:hover span::after {
+    width: 100%;
+}
+
+.form .upload-area .avatar-buttons button:nth-child(2) {
+    padding: 0;
+}
+
+.form .upload-area .avatar-buttons button label{
+    border: none;
+    font-family: 'Inconsolata', monospace;
+    color: var(--inputs-text-color);
+    font-size: 1.2rem;
+    padding: 4px 8px;
+}
+
+.form .upload-area:has(.avatar-buttons) .avatar-buttons{
+    display: flex;
+}
+
+.form .upload-area:has(.avatar-buttons) label > span:nth-child(2) {
+    opacity: 0;
+}
+
 .form .upload-area label::before {
     content: '';
     margin-bottom: 16px;
@@ -171,8 +245,6 @@ input:-webkit-autofill:active {
     margin-right: 8px;
     filter: invert(13%) sepia(77%) saturate(5719%) hue-rotate(342deg) brightness(106%) contrast(104%);
 }
-
-
 
 .form .error-text ~ .bnt{
     margin-top: 0;
