@@ -18,6 +18,7 @@ body {
     background-size: auto, auto, auto, auto, cover, cover;
     background-repeat: no-repeat;
     background-position: bottom left, top 10% right, top -13% left 5%, right 30% bottom 40%, center, center;
+    height: 100vh;
 }
 
 /* Global Styles */
