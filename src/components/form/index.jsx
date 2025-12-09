@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import './index.css'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router';
+import { handleAvatarChange, removeImage, validateImage, isString } from '../form/functions.js';
 
 const Form = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate();
 
     const [avatarUrl, setAvatarUrl] = useState();
 
@@ -15,31 +18,8 @@ const Form = () => {
         };
     }, [avatarUrl]);
 
-    function handleAvatarChange(e) {
-        const file = e.target.files[0];
-        if (file) {
-            setAvatarUrl(URL.createObjectURL(file));
-        }
-    }
-
-    function removeImage() {
-        setAvatarUrl(null)
-    } 
-
     const handleSubmitForm = (data) => {
-        console.log(data)
-    }
-
-    function validateImage(fileList) {
-        const image = fileList[0];
-        if (!image || image.type == "" || image.size == 0 || avatarUrl == null) return "Upload your photo (JPG or PNG, max size: 500KB).";
-        if (image.size > 500 * 1024) return "File too large. Please upload a photo under 500KB";
-        return true;
-    }
-
-    function isString(value) {
-        if (typeof value !== 'string' || value.trim() === '') return 'Invalid';
-        return true;
+        navigate('ticketPage', { state: data });
     }
 
     return (
@@ -54,14 +34,14 @@ const Form = () => {
                         {...register('avatar',
                             { validate: validateImage }
                         )} 
-                        onChange={handleAvatarChange}/>
+                        onChange={(e) => handleAvatarChange(e, setAvatarUrl)}/>
                     
                     <label htmlFor="avatar"> 
                         <img className={avatarUrl ? 'avatar-image' : null} src={avatarUrl} />  
                         <span>Drag and drop or click to upload</span>
                     </label>
                     <div className={avatarUrl ? 'avatar-buttons' : ''}>
-                        <button type="button" onClick={removeImage}><span>Remove image</span></button>
+                        <button type="button" onClick={() => removeImage(setAvatarUrl)}><span>Remove image</span></button>
                         <button type="button"> <label htmlFor="avatar"><span>Change image</span></label></button>
                     </div>
                 </div>
@@ -114,4 +94,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default Form;

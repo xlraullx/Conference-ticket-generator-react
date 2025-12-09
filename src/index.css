@@ -51,6 +51,10 @@ body {
     --upload-p-and-lable-color: var(--gray);
     --bnt-submit-bkg-color: var(--orange);
     --bnt-text-color: var(--dark-violet);
+    --name-gradiant: var(--orange), var(--white);
+    --email: var(--orange);
+    --ticket-about-color: var(--white);
+    --ticket-info-color: var(--gray);
 
     --error-text-color: var(--strong-orange);
 }

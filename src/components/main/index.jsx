@@ -1,6 +1,5 @@
 import './index.css'
 import Form from '../form'
-import { Ticket } from '../ticket'
 
 const Main = () => {
     return(
@@ -11,7 +10,6 @@ const Main = () => {
         </div>
         
         <Form/>
-        {/* <Ticket/> */}
         
     </main>
     )

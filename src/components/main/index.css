@@ -8,7 +8,6 @@
 .main .presentation-text h1 {    
     margin-top: 40px;
     text-align: center;
-    white-space: pre-line;
     font-size: 6rem;
     color: var(--presentation-h1-color);
 }
