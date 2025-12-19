@@ -2,9 +2,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 460px;
+    max-width: min(460px, 85%);
     width: 100%;
     height: 100%;
+    padding-top: min(48px, 2vh);
+    padding-bottom: 40px;
 }
 
 .form input {
@@ -19,13 +21,21 @@
     border: 1px solid var(--inputs-border-color);
     border-radius: 10px;
     padding-left: 15px;
-    margin-bottom: 20px;
     position: relative;
 }
 
 .form input:focus-visible {
     outline: 2px solid var(--inputs-focus-color);
     outline-offset: 3px;
+}
+
+.form input:hover, .form .upload-area:hover,.form .upload-area::after  {
+    -webkit-box-shadow: 0 0 0 1000px var(--inputs-background-color) inset;
+    -webkit-text-fill-color: var(--inputs-text-color);
+}
+
+.form input, .form .upload-area{
+    transition: 0.2s ease-in-out ;
 }
 
 .form label:not([for="avatar"]) {
@@ -193,18 +203,19 @@ input:-webkit-autofill:active {
 
 .form .upload-info {
     display: flex;
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 1.2vw, 1.6rem);
     margin: 12px 0 20px 0;
+    position: relative;
+    height: 16px;
+    align-items: center;
 }
 
 .form .upload-info p{
     padding-left: 24px;
-    position: relative;
 }
 
 .form .upload-info p::before {
     content: '';
-    display: flex;
     position: absolute;
     background-image: url(../../assets/images/icon-info.svg);
     background-size: 16px;
@@ -228,20 +239,21 @@ input:-webkit-autofill:active {
     cursor: pointer;
 }
 
-.form .upload-info.error img{
-    filter: invert(13%) sepia(77%) saturate(5719%) hue-rotate(342deg) brightness(106%) contrast(104%);
-}
-
-.form .upload-info.error{
-    color: var(--strong-orange);
+.form .upload-info .error-text{
+    font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+    margin: 0;
 }
 
 .form .error-text {
     display: flex;
-    font-size: 1.4rem;
+    align-items: center;
+    font-size: clamp(1.2rem, 1.2vw, 1.4rem); 
     color: var(--strong-orange);
-    margin-bottom: 4px;
-    width: max-content;
+    margin: 12px 0 24px;
+}
+
+.form div:empty {
+    margin-bottom: 26px;
 }
 
 .form .error-text::before {
@@ -250,6 +262,8 @@ input:-webkit-autofill:active {
     filter: invert(13%) sepia(77%) saturate(5719%) hue-rotate(342deg) brightness(106%) contrast(104%);
 }
 
-.form .error-text ~ .bnt{
-    margin-top: 0;
+@media (max-width: 395px){
+    .form{
+        margin-top: min(48px, 2vh);
+    }   
 }

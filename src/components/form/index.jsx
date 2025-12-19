@@ -59,7 +59,7 @@ const Form = () => {
                     required: 'Please enter a valid name',
                     validate: isString
                 })} />
-            <div className={errors.name ? `error-text` : ``}>  {errors.name && <p>{errors.name.message}</p>}</div>
+            <div className={errors.name ? `error-text` : ``}>{errors.name && <p>{errors.name.message}</p>}</div>
 
             <label htmlFor="email">Email Address</label>
             <input
@@ -76,7 +76,7 @@ const Form = () => {
                     }
                 })}
             />
-            <div className={errors.email ? `error-text` : ``}> {errors.email && <p>{errors.email.message}</p>}</div>
+            <div className={errors.email ? `error-text` : ``}>{errors.email && <p>{errors.email.message}</p>}</div>
 
             <label htmlFor="githubUserName">GitHub Username</label>
             <input
@@ -87,7 +87,7 @@ const Form = () => {
                     required: 'Please enter a valid github username',
                     validate: isString
                 })} />
-            <div className={errors.githubUserName ? `error-text` : ``}> {errors.githubUserName && <p>{errors.githubUserName.message}</p>}</div>
+            <div className={errors.githubUserName ? `error-text` : ``}>{errors.githubUserName && <p>{errors.githubUserName.message}</p>}</div>
 
             <button className="bnt" type="submit" >Generate My Ticket</button>
         </form>

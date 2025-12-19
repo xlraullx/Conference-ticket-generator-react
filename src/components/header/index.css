@@ -1,13 +1,17 @@
 .header {
     display: flex;
-    min-height: 65px;
-    
+    height: 65px;
     align-items: center;
     justify-content: center;
-    font-size: 2.3rem;
     color: var(--header-letter-color);
 }
 
+.header img {
+    width: clamp(2.4rem, 1.6vw, 6rem);
+    
+}
+
 .header h2 {
-    margin-left: 20px;
+    font-size: clamp(2.4rem , 1.6vw , 6rem);
+    margin-left: 16px;
 }

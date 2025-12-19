@@ -1,11 +1,12 @@
 @font-face {
     font-family: 'Inconsolata';
     src: url(./assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf) format('truetype'),
-         url(./assets/fonts/static/Inconsolata-Regular.ttf) format('truetype'),
-         url(./assets/fonts/static/Inconsolata-Medium.ttf) format('truetype'),
-         url(./assets/fonts/static/Inconsolata-Bold.ttf) format('truetype'),
-         url(./assets/fonts/static/Inconsolata-ExtraBold.ttf) format('truetype');
+        url(./assets/fonts/static/Inconsolata-Regular.ttf) format('truetype'),
+        url(./assets/fonts/static/Inconsolata-Medium.ttf) format('truetype'),
+        url(./assets/fonts/static/Inconsolata-Bold.ttf) format('truetype'),
+        url(./assets/fonts/static/Inconsolata-ExtraBold.ttf) format('truetype');
 }
+
 body {
     font-family: 'Inconsolata', monospace;
     background-image:
@@ -18,13 +19,13 @@ body {
     background-size: auto, auto, auto, auto, cover, cover;
     background-repeat: no-repeat;
     background-position: bottom left, top 10% right, top -13% left 5%, right 30% bottom 40%, center, center;
-    height: 100vh;
+    background-attachment: fixed;
 }
 
 /* Global Styles */
 
-:root{
-            /* Colors */
+:root {
+    /* Colors */
 
     --white: hsl(0, 0%, 100%);
     --gray: hsl(252, 6%, 83%);
@@ -36,7 +37,7 @@ body {
     --strong-orange: hsl(7, 71%, 60%);
 
 
-        /* Project color definitions */
+    /* Project color definitions */
 
     --header-letter-color: var(--white);
     --presentation-h1-color: var(--white);
@@ -59,7 +60,20 @@ body {
     --error-text-color: var(--strong-orange);
 }
 
-
-html{
+html {
     font-size: 62.5%; /* 1rem = 10px */
+}
+
+@media (max-width: 600px) {
+    body {
+        background-image:
+            url(./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg),
+            url(./assets/images/pattern-squiggly-line-top.svg),
+            url(./assets/images/pattern-circle.svg),
+            url(./assets/images/pattern-circle.svg),
+            url(./assets/images/pattern-lines.svg),
+            url(./assets/images/background-mobile.png);
+        background-size: 400px, 100px, 140px, 96px, cover, cover;
+        background-position: bottom left, top 4% right, top -5% left -5%, right -12% bottom 36%, center, center;
+    }
 }
