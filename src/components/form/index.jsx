@@ -19,6 +19,7 @@ const Form = () => {
     }, [avatarUrl]);
 
     const handleSubmitForm = (data) => {
+        data.name = data.name.replace(/\s+/g, ' ').trim();
         navigate('ticketPage', { state: data });
     }
 
@@ -85,7 +86,11 @@ const Form = () => {
                 placeholder="@yourusername"
                 {...register('githubUserName', {
                     required: 'Please enter a valid github username',
-                    validate: isString
+                    validate: isString,
+                    pattern: {
+                        value: /^\S+$/,
+                        message: 'GitHub username cannot contain spaces'
+                    }
                 })} />
             <div className={errors.githubUserName ? `error-text` : ``}>{errors.githubUserName && <p>{errors.githubUserName.message}</p>}</div>
 
