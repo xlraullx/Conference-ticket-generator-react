@@ -1,8 +1,22 @@
 import './index.css'
 import logo from '../../assets/images/logo-mark.svg'
+import { useEffect, useState } from 'react'
 
 const Ticket = (user) => {
-    const avatar = typeof user.data.avatar === 'string'? user.data.avatar : URL.createObjectURL(user.data.avatar[0])
+
+    const [avatar, setAvatar] = useState('');
+
+    useEffect(() => {
+        const Newavatar = typeof user.data.avatar === 'string'? user.data.avatar : URL.createObjectURL(user.data.avatar[0])
+
+        setAvatar(Newavatar);
+        
+        return () => {
+                if (typeof user.data.avatar !== 'string') {
+                    URL.revokeObjectURL(avatar);
+                }
+            };
+    }, [user.data.avatar])
 
     return (
         <div className='ticket-container'>
