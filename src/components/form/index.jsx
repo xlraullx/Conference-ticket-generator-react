@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 import { handleAvatarChange, removeImage, validateImage, isString } from '../form/functions.js';
 
 const Form = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, setValue } = useForm();
     const navigate = useNavigate();
 
     const [avatarUrl, setAvatarUrl] = useState();
@@ -42,7 +42,7 @@ const Form = () => {
                         <span>Drag and drop or click to upload</span>
                     </label>
                     <div className={avatarUrl ? 'avatar-buttons' : ''}>
-                        <button type="button" onClick={() => removeImage(setAvatarUrl)}><span>Remove image</span></button>
+                        <button type="button" onClick={() => removeImage(setAvatarUrl, setValue)}><span>Remove image</span></button>
                         <button type="button"> <label htmlFor="avatar"><span>Change image</span></label></button>
                     </div>
                 </div>

@@ -5,8 +5,9 @@ function handleAvatarChange(e, setAvatarUrl) {
     }
 }
 
-function removeImage(setAvatarUrl) {
-    setAvatarUrl(null)
+function removeImage(setAvatarUrl, setValue) {
+    setAvatarUrl(null);
+    setValue('avatar', []);
 }
 
 function validateImage(fileList) {
