@@ -69,11 +69,13 @@
     align-items: center;
     width: 80%;
     gap: 12px;
+    max-height: 40%;
 }
 
 .ticket-container-card .ticket-user img {
     width: clamp(4.4rem, 6vw, 8.4rem);
     border-radius: 15%;
+    max-height: 100%;
 }
 
 .ticket-container-card .ticket-user .user-info .user-name {
